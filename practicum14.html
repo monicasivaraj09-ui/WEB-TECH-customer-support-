@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Support Portal</title>
+
+    <link rel="stylesheet" href="practicum14.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo">
+        <img src="images/cus.jpg" alt="Customer Support Logo">
+
+        <h1>Customer Support Portal</h1>
+    </div>
+
+    <div class="notification">
+        <span>●</span> We are available 24/7
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#tasks">Task Manager</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HOME SECTION -->
+
+<section id="home" class="home">
+
+    <div class="home-content">
+
+        <h2>Welcome to Customer Support</h2>
+
+        <p>
+            Your satisfaction is our priority.
+            Get professional assistance for all your
+            technical, billing and account-related problems.
+        </p>
+
+        <button onclick="showNotification()">
+            Get Support
+        </button>
+
+    </div>
+
+    <img src="images/cus service.jpg" alt="Customer Service">
+
+</section>
+
+
+<!-- SUPPORT CATEGORIES -->
+
+<section id="categories" class="section">
+
+    <h2>Our Support Categories</h2>
+
+    <div class="category-container">
+
+        <div class="category-card">
+
+            <img src="images/supp.jpg" alt="Technical Support">
+
+            <h3>Technical Support</h3>
+
+            <p>Get assistance with technical problems.</p>
+
+            <button onclick="selectService('Technical')">
+                Select
+            </button>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <img src="images/chat.jpg" alt="Live Chat">
+
+            <h3>Live Chat</h3>
+
+            <p>Connect with our customer support team.</p>
+
+            <button onclick="selectService('Live Chat')">
+                Select
+            </button>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <img src="images/bill.jpg" alt="Billing Support">
+
+            <h3>Billing Support</h3>
+
+            <p>Resolve payment and billing problems.</p>
+
+            <button onclick="selectService('Billing')">
+                Select
+            </button>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <img src="images/acc" alt="Account Support">
+
+            <h3>Account Support</h3>
+
+            <p>Get help with account-related issues.</p>
+
+            <button onclick="selectService('Account')">
+                Select
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DYNAMIC SERVICE MANAGEMENT -->
+
+<section class="section">
+
+    <h2>Manage Support Services</h2>
+
+    <div class="service-management">
+
+        <input
+            type="text"
+            id="serviceInput"
+            placeholder="Enter new service name"
+        >
+
+        <button id="addService">
+            Add Service
+        </button>
+
+    </div>
+
+    <ul id="serviceList" class="service-list">
+
+        <li>Technical Support</li>
+        <li>Billing Support</li>
+        <li>Account Support</li>
+
+    </ul>
+
+</section>
+
+
+<!-- SUPPORT TASK MANAGER -->
+
+<section id="tasks" class="section">
+
+    <h2>Customer Support Task Manager</h2>
+
+    <p class="description">
+        Create, manage, update and track customer support requests.
+    </p>
+
+
+    <!-- TASK FORM -->
+
+    <div class="task-form">
+
+        <h3>Add Support Task</h3>
+
+        <input
+            type="text"
+            id="taskTitle"
+            placeholder="Enter task title"
+        >
+
+        <textarea
+            id="taskDescription"
+            placeholder="Enter task description"
+        ></textarea>
+
+        <select id="taskCategory">
+
+            <option value="">Select Category</option>
+            <option value="Technical">Technical</option>
+            <option value="Billing">Billing</option>
+            <option value="Account">Account</option>
+            <option value="Live Chat">Live Chat</option>
+
+        </select>
+
+
+        <select id="taskPriority">
+
+            <option value="">Select Priority</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+
+        </select>
+
+
+        <button id="addTask">
+            Add Task
+        </button>
+
+    </div>
+
+
+    <!-- PRACTICUM 14 SEARCH AND FILTER SYSTEM -->
+
+    <div class="filter-container">
+
+        <h3>Search and Filter Support Tasks</h3>
+
+        <div class="filter-grid">
+
+            <input
+                type="text"
+                id="searchTask"
+                placeholder="Search tasks..."
+            >
+
+
+            <select id="filterCategory">
+
+                <option value="All">All Categories</option>
+                <option value="Technical">Technical</option>
+                <option value="Billing">Billing</option>
+                <option value="Account">Account</option>
+                <option value="Live Chat">Live Chat</option>
+
+            </select>
+
+
+            <select id="filterPriority">
+
+                <option value="All">All Priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+
+            </select>
+
+
+            <select id="filterStatus">
+
+                <option value="All">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+
+            </select>
+
+        </div>
+
+        <button id="resetFilters">
+            Reset Filters
+        </button>
+
+    </div>
+
+
+    <!-- TASK TABLE -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Task ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="taskTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <p id="taskCount"></p>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq" class="section">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-container">
+
+        <details>
+
+            <summary>How can I contact customer support?</summary>
+
+            <p>
+                You can contact our support team through the
+                contact form or live chat.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>How can I track my support request?</summary>
+
+            <p>
+                Use the Task Manager to search and track
+                your support requests.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>Is customer support available 24/7?</summary>
+
+            <p>
+                Yes, our customer support services are
+                available throughout the day.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>Can I update my support request?</summary>
+
+            <p>
+                Yes, you can edit your task details and
+                update its status.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- MEDIA SECTION -->
+
+<section id="media" class="section">
+
+    <h2>Customer Support Media</h2>
+
+    <div class="media-container">
+
+        <div>
+
+            <h3>Audio</h3>
+
+            <audio controls>
+
+                <source src="images/WhatsApp Audio 2026-11-21 at 9.15.18 PM.mpeg" type="audio/mpeg">
+
+                Your browser does not support audio.
+
+            </audio>
+
+        </div>
+
+
+        <div>
+
+            <h3>Video</h3>
+
+            <video controls width="350">
+
+                <source src="images/WhatsApp Video 2026-11-21 at 9.17.54 PM.mp4" type="video/mp4">
+
+                Your browser does not support video.
+
+            </video>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REGISTRATION -->
+
+<section id="register" class="section">
+
+    <h2>Customer Registration</h2>
+
+    <form id="registrationForm">
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Enter your name"
+            required
+        >
+
+        <input
+            type="email"
+            id="customerEmail"
+            placeholder="Enter your email"
+            required
+        >
+
+        <input
+            type="tel"
+            id="customerPhone"
+            placeholder="Enter phone number"
+            required
+        >
+
+        <select id="customerService" required>
+
+            <option value="">Select Service</option>
+            <option value="Technical">Technical Support</option>
+            <option value="Billing">Billing Support</option>
+            <option value="Account">Account Support</option>
+
+        </select>
+
+        <button type="submit">
+            Register
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- API FEEDBACK TABLE -->
+
+<section class="section">
+
+    <h2>Customer Feedback</h2>
+
+    <form id="feedbackForm">
+
+        <input
+            type="text"
+            id="feedbackName"
+            placeholder="Your name"
+            required
+        >
+
+        <textarea
+            id="feedbackMessage"
+            placeholder="Enter your feedback"
+            required
+        ></textarea>
+
+        <button type="submit">
+            Submit Feedback
+        </button>
+
+    </form>
+
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Customer</th>
+                <th>Feedback</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="feedbackTable">
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section">
+
+    <h2>About Us</h2>
+
+    <img
+        src="images/cus sup.webp"
+        class="about-image"
+        alt="Support Team"
+    >
+
+    <p>
+        Our customer support portal provides a convenient
+        platform to manage customer queries, service requests
+        and feedback efficiently.
+    </p>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="section">
+
+    <h2>Contact Us</h2>
+
+    <p>Email: support@example.com</p>
+
+    <p>Phone: +91 9876543210</p>
+
+    <p>Location: Chennai, Tamil Nadu</p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Customer Support Portal.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- FIXED BUTTON -->
+
+<button class="fixed-button" onclick="showNotification()">
+
+    Contact Support
+
+</button>
+
+
+<script src="practicum14.js"></script>
+
+</body>
+
+</html>

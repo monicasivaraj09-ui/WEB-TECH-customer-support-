@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Support Portal - Practicum 13</title>
+
+    <link rel="stylesheet" href="practicum13.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Customer Support Portal</h1>
+        <p>Your trusted partner for customer assistance</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a href="#manage">Manage Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#api-section">Feedback</a>
+        <a href="#task-manager">Task Manager</a>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h2>Welcome to Our Support Portal</h2>
+
+            <p>
+                We provide reliable customer support services
+                to solve your problems quickly and efficiently.
+            </p>
+
+            <button id="welcomeBtn">Explore Services</button>
+
+        </div>
+
+        <img src="images/cus.jpg" alt="Customer Support">
+
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+
+        <h2>Our Services</h2>
+
+        <div class="service-container">
+
+            <div class="service-card">
+
+                <img src="images/supp.jpg" alt="Technical Support">
+
+                <h3>Technical Support</h3>
+
+                <p>Get assistance with technical problems.</p>
+
+                <button class="detailsBtn">View Details</button>
+
+                <p class="details">
+                    Our technical team helps customers
+                    solve software and hardware problems.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <img src="images/chat.jpg" alt="Live Chat">
+
+                <h3>Live Chat</h3>
+
+                <p>Connect with our support team instantly.</p>
+
+                <button class="detailsBtn">View Details</button>
+
+                <p class="details">
+                    Communicate with our support agents
+                    through real-time chat assistance.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <img src="images/bill.jpg" alt="Billing Support">
+
+                <h3>Billing Support</h3>
+
+                <p>Get help with payments and invoices.</p>
+
+                <button class="detailsBtn">View Details</button>
+
+                <p class="details">
+                    Our billing team helps with payment
+                    issues, invoices and refunds.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery">
+
+        <h2>Our Support Team</h2>
+
+        <div class="gallery-container">
+
+            <img src="images/cus sup.webp" alt="Support Team">
+
+            <img src="images/acc" alt="Account Support">
+
+            <img src="images/cus service.jpg" alt="Customer Service">
+
+        </div>
+
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-box">
+
+            <h3>How can I contact customer support?</h3>
+
+            <button id="faqBtn">Show Answer</button>
+
+            <p id="faqAnswer">
+                You can contact our customer support team
+                through the contact form or live chat service.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- PRACTICUM 10: MANAGE SERVICES -->
+    <section id="manage">
+
+        <h2>Manage Customer Support Services</h2>
+
+        <div class="service-form">
+
+            <input type="text"
+                   id="serviceName"
+                   placeholder="Enter Service Name">
+
+            <input type="text"
+                   id="serviceDescription"
+                   placeholder="Enter Service Description">
+
+            <button id="addServiceBtn">Add Service</button>
+
+        </div>
+
+        <p id="serviceMessage"></p>
+
+        <ul id="serviceList">
+
+            <li>
+                Technical Support
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+            </li>
+
+            <li>
+                Billing Support
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+            </li>
+
+        </ul>
+
+    </section>
+
+    <!-- PRACTICUM 11: SUPPORT REQUEST FORM -->
+    <section id="contact">
+
+        <h2>Customer Support Request Form</h2>
+
+        <form id="supportRequestForm">
+
+            <fieldset>
+
+                <legend>Personal Information</legend>
+
+                <label for="name">Full Name:</label>
+
+                <input type="text"
+                       id="name"
+                       minlength="3"
+                       maxlength="30"
+                       pattern="[A-Za-z ]{3,30}"
+                       placeholder="Enter your full name"
+                       required>
+
+                <label for="email">Email Address:</label>
+
+                <input type="email"
+                       id="email"
+                       placeholder="Enter your email"
+                       required>
+
+                <label for="phone">Phone Number:</label>
+
+                <input type="tel"
+                       id="phone"
+                       pattern="[6-9][0-9]{9}"
+                       minlength="10"
+                       maxlength="10"
+                       placeholder="10-digit mobile number"
+                       required>
+
+                <label for="age">Age:</label>
+
+                <input type="number"
+                       id="age"
+                       min="18"
+                       max="100"
+                       required>
+
+            </fieldset>
+
+            <fieldset>
+
+                <legend>Support Information</legend>
+
+                <label for="category">Support Category:</label>
+
+                <select id="category" required>
+
+                    <option value="">Select Category</option>
+                    <option value="Technical">Technical Support</option>
+                    <option value="Billing">Billing Support</option>
+                    <option value="Account">Account Support</option>
+                    <option value="Live Chat">Live Chat</option>
+
+                </select>
+
+                <label for="issue">Describe Your Issue:</label>
+
+                <textarea id="issue"
+                          minlength="10"
+                          maxlength="300"
+                          placeholder="Describe your problem"
+                          required></textarea>
+
+                <label for="priority">Priority:</label>
+
+                <select id="priority" required>
+
+                    <option value="">Select Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+
+                </select>
+
+            </fieldset>
+
+            <button type="submit">Submit Request</button>
+
+            <p id="formMessage"></p>
+
+        </form>
+
+    </section>
+
+    <!-- PRACTICUM 12: API INTEGRATION -->
+    <section id="api-section">
+
+        <h2>Customer Feedback Dashboard</h2>
+
+        <p>
+            Retrieve customer feedback information
+            directly from an external API.
+        </p>
+
+        <div class="api-container">
+
+            <div class="api-header">
+
+                <div>
+                    <h3>Customer Feedback Records</h3>
+                    <p>Live data retrieved using API integration.</p>
+                </div>
+
+                <button id="fetchBtn">
+                    Load Customer Feedback
+                </button>
+
+            </div>
+
+            <p id="loadingMessage">
+                Click the button to load customer feedback.
+            </p>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Customer Name</th>
+                            <th>Username</th>
+                            <th>Feedback Message</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="feedbackBody"></tbody>
+
+                </table>
+
+            </div>
+
+            <p id="apiStatus"></p>
+
+        </div>
+
+    </section>
+
+    <!-- PRACTICUM 13: CUSTOMER SUPPORT TASK MANAGER -->
+    <section id="task-manager">
+
+        <h2>Customer Support Task Manager</h2>
+
+        <p class="section-description">
+            Create, manage and track customer support tasks
+            using our task management system.
+        </p>
+
+        <!-- TASK FORM -->
+        <div class="task-form-container">
+
+            <h3 id="taskFormTitle">Add New Task</h3>
+
+            <form id="taskForm">
+
+                <label for="taskTitle">Task Title:</label>
+
+                <input type="text"
+                       id="taskTitle"
+                       placeholder="Enter task title"
+                       required>
+
+                <label for="taskDescription">Task Description:</label>
+
+                <textarea id="taskDescription"
+                          placeholder="Enter task description"
+                          required></textarea>
+
+                <label for="taskCategory">Task Category:</label>
+
+                <select id="taskCategory" required>
+
+                    <option value="">Select Category</option>
+                    <option value="Technical Support">Technical Support</option>
+                    <option value="Billing Support">Billing Support</option>
+                    <option value="Account Support">Account Support</option>
+                    <option value="Live Chat">Live Chat</option>
+
+                </select>
+
+                <label for="taskPriority">Task Priority:</label>
+
+                <select id="taskPriority" required>
+
+                    <option value="">Select Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+
+                </select>
+
+                <label for="taskStatus">Task Status:</label>
+
+                <select id="taskStatus" required>
+
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+
+                </select>
+
+                <div class="task-buttons">
+
+                    <button type="submit" id="saveTaskBtn">
+                        Add Task
+                    </button>
+
+                    <button type="button" id="cancelEditBtn">
+                        Cancel Edit
+                    </button>
+
+                </div>
+
+            </form>
+
+            <p id="taskMessage"></p>
+
+        </div>
+
+        <!-- TASK TABLE -->
+        <div class="task-list-container">
+
+            <h3>All Customer Support Tasks</h3>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Task ID</th>
+                            <th>Task Title</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="taskTableBody"></tbody>
+
+                </table>
+
+            </div>
+
+            <p id="emptyMessage">
+                No tasks available. Add your first task!
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- NOTIFICATION -->
+    <div class="notification" id="notification">
+
+        <p>Thank you for visiting our Customer Support Portal!</p>
+
+    </div>
+
+    <button id="notifyBtn">Show Notification</button>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 Customer Support Portal.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script src="practicum13.js"></script>
+
+</body>
+
+</html>
